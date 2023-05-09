@@ -14,7 +14,7 @@ export const showHit = () =>
       background: 'linear-gradient(to right, #00b09b, #96c93d)',
     },
     offset: {
-      x: 0, // horizontal axis - can be a number or a string indicating unity. eg: '2em'
+      x: '25vw', // horizontal axis - can be a number or a string indicating unity. eg: '2em'
       y: '15vh', // vertical axis - can be a number or a string indicating unity. eg: '2em'
     },
   }).showToast();
