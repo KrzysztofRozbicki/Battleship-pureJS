@@ -4,6 +4,11 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link href="./index.css" rel="stylesheet" />
+    <link
+      rel="stylesheet"
+      type="text/css"
+      href="https://cdn.jsdelivr.net/npm/toastify-js/src/toastify.min.css"
+    />
     <title>Battleship</title>
   </head>
   <body>
@@ -11,6 +16,10 @@
       <button id="start-btn" type="button" class="start-btn">Start</button>
       <div class="statistics">
         <article>
+          <h3>POINTS</h3>
+          <p id="points">0</p>
+        </article>
+        <!-- <article>
           <h3>Missed Shots</h3>
           <p id="missed">0</p>
         </article>
@@ -29,10 +38,10 @@
         <article>
           <h3>Sinked Cruisers</h3>
           <p id="cruiser">0</p>
-        </article>
+        </article> -->
       </div>
       <div id="app" class="wrapper"></div>
     </div>
-    <script src="index.js" type="module"></script>
+    <script src="./index.js" type="module"></script>
   </body>
 </html>

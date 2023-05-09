@@ -76,3 +76,9 @@
   padding: 0.5rem 1rem;
   border-radius: 0.5rem;
 }
+
+.animation {
+  object-fit: cover;
+  width: 50px;
+  height: 50px;
+}
