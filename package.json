@@ -1,23 +1,23 @@
 {
-  "name": "parcel-tailwind-template",
+  "name": "Battleship-pureJS",
   "version": "1.0.0",
   "description": "",
   "scripts": {
     "start": "parcel src/index.html",
-    "build": "parcel build src/index.html --public-url /parcel-tailwind-template/",
+    "build": "parcel build src/index.html --public-url /Battleship-pureJS/",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/KrzysztofRozbicki/parcel-tailwind-template.git"
+    "url": "git+https://github.com/KrzysztofRozbicki/Battleship-pureJS.git"
   },
   "keywords": [],
   "author": "",
   "license": "ISC",
   "bugs": {
-    "url": "https://github.com/KrzysztofRozbicki/parcel-tailwind-template/issues"
+    "url": "https://github.com/KrzysztofRozbicki/Battleship-pureJS/issues"
   },
-  "homepage": "https://github.com/KrzysztofRozbicki/parcel-tailwind-template#readme",
+  "homepage": "https://github.com/KrzysztofRozbicki/Battleship-pureJS#readme",
   "devDependencies": {
     "flowbite": "^1.6.5",
     "parcel": "^2.8.3",
