@@ -4,11 +4,6 @@ import { showHit, showSinked, showMiss, youWin } from './assets/notify';
 const SIZE = 10;
 const wrapperEl = document.getElementById('app');
 const startBtn = document.getElementById('start-btn');
-// const missedShotsEl = document.getElementById('missed');
-// const sinkedCorvetteEl = document.getElementById('corvette');
-// const sinkedFregateEl = document.getElementById('fregate');
-// const sinkedDestroyerEl = document.getElementById('destroyer');
-// const sinkedCruiserEl = document.getElementById('cruiser');
 const pointsEl = document.getElementById('points');
 
 const DESTROYED = 0;
@@ -26,17 +21,14 @@ const POINTS_DESTROYER = 100;
 const POINTS_CRUISER = 200;
 
 let points = 0;
-let missedHits = 0;
-let sinkedCorvette = 0;
-let sinkedFregate = 0;
-let sinkedDestroyer = 0;
-let sinkedCruiser = 0;
 
 const battleship = new Battleship(SIZE);
 
 battleship.randomize(wrapperEl);
 
 startBtn.addEventListener('click', () => {
+  points = 0;
+  pointsEl.innerText = points;
   battleship.clearBoard(wrapperEl);
   battleship.randomize(wrapperEl);
 });
@@ -61,26 +53,18 @@ wrapperEl.addEventListener('click', event => {
       console.log(ship.cells.length);
       switch (ship.cells.length) {
         case 1:
-          sinkedCorvette += 1;
-          //   sinkedCorvetteEl.innerText = sinkedCorvette;
           showSinked('Corvette', POINTS_CORVETTE);
           points += POINTS_CORVETTE;
           break;
         case 2:
-          sinkedFregate += 1;
-          //   sinkedFregateEl.innerText = sinkedFregate;
           showSinked('Fregate', POINTS_FREGATE);
           points += POINTS_FREGATE;
           break;
         case 3:
-          sinkedDestroyer += 1;
-          //   sinkedDestroyerEl.innerText = sinkedDestroyer;
           showSinked('Destroyer', POINTS_DESTROYER);
           points += POINTS_DESTROYER;
           break;
         case 4:
-          sinkedCruiser += 1;
-          //   sinkedCruiserEl.innerText = sinkedCruiser;
           showSinked('Cruiser', POINTS_CRUISER);
           points += POINTS_CRUISER;
           break;
@@ -100,8 +84,6 @@ wrapperEl.addEventListener('click', event => {
     clickedCell.innerHTML = '⚫';
     clickedCell.classList.add('miss');
     battleship.board[x][y] = MISS;
-    missedHits += 1;
-    // missedShotsEl.innerText = missedHits;
     showMiss(POINTS_MISS);
     points -= POINTS_MISS;
   }
