@@ -1,3 +1,56 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+.wrapper {
+  height: 100vh;
+  width: 100vw;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.cell {
+  width: 50px;
+  height: 50px;
+  border: 1px solid #000;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 40px;
+  cursor: pointer;
+}
+
+.hit {
+  background-color: rgba(193, 105, 71, 0.6);
+  pointer-events: none;
+  cursor: none;
+}
+
+.destroyed {
+  background-color: red;
+}
+
+.miss {
+  font-size: 20px;
+}
+
+.row {
+  display: flex;
+  flex-direction: row;
+}
+
+.start-btn {
+  margin-top: 15vh;
+  border: 1px solid #444;
+  padding: 0.5rem 1rem;
+  border-radius: 0.5rem;
+  background-color: #456;
+  color: white;
+}
+
+.start-btn:hover {
+  cursor: pointer;
+  background-color: #bbb;
+}
