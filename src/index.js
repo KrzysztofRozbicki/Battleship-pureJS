@@ -100,7 +100,6 @@ wrapperEl.addEventListener('click', event => {
     clickedCell.innerHTML = '⚫';
     clickedCell.classList.add('miss');
     battleship.board[x][y] = MISS;
-    missedHits += 1;
     showMiss(POINTS_MISS);
     points -= POINTS_MISS;
   }
