@@ -21,6 +21,8 @@ let sinkedCruiser = 0;
 
 const battleship = new Battleship(SIZE);
 
+battleship.randomize(wrapperEl);
+
 startBtn.addEventListener('click', () => {
   battleship.clearBoard(wrapperEl);
   battleship.randomize(wrapperEl);
