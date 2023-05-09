@@ -42,7 +42,7 @@
 }
 
 .start-btn {
-  margin-top: 15vh;
+  margin-top: 5vh;
   border: 1px solid #444;
   padding: 0.5rem 1rem;
   border-radius: 0.5rem;
@@ -53,4 +53,26 @@
 .start-btn:hover {
   cursor: pointer;
   background-color: #bbb;
+}
+
+.statistics {
+  margin-top: 2rem;
+  display: flex;
+  gap: 2rem;
+  text-align: center;
+}
+
+.statistics h3 {
+  font-size: 24px;
+  border: 1px solid #444;
+  padding: 0.5rem 1rem;
+  border-radius: 0.5rem;
+}
+
+.statistics p {
+  font-size: 20px;
+  margin-top: 1rem;
+  border: 1px solid #444;
+  padding: 0.5rem 1rem;
+  border-radius: 0.5rem;
 }

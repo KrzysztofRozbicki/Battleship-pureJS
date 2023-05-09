@@ -179,7 +179,6 @@ export class Battleship {
 2 - twoShip
 3 - threeShip
 4 - fourShip
-5 - hit
 6 - miss
 7 - empty
 */
