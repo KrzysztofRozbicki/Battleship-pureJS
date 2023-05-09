@@ -12,9 +12,9 @@
 }
 
 .cell {
-  width: 50px;
-  height: 50px;
-  border: 1px solid #000;
+  min-width: 4vh;
+  min-height: 4vh;
+  outline: 1px solid #000;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -33,7 +33,7 @@
 }
 
 .miss {
-  font-size: 20px;
+  font-size: 2.4vh;
 }
 
 .row {
@@ -79,6 +79,6 @@
 
 .animation {
   object-fit: cover;
-  width: 50px;
-  height: 50px;
+  width: 4vh;
+  height: 4vh;
 }

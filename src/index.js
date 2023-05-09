@@ -1,5 +1,7 @@
 import { Battleship } from './battleship';
 import { showHit, showSinked, showMiss, youWin } from './assets/notify';
+import burning from './assets/animation/burning.gif';
+import sinking from './assets/animation/sinking.gif';
 
 const SIZE = 10;
 const wrapperEl = document.getElementById('app');
@@ -51,15 +53,14 @@ wrapperEl.addEventListener('click', event => {
   const y = +clickedCell.dataset.column;
   const ship = battleship.board[x][y];
   if (ship.size > DESTROYED && ship.size < MISS) {
-    clickedCell.innerHTML = '<img src="./burning.afd00d93.gif" class="animation" />';
+    clickedCell.innerHTML = `<img src="${burning}" class="animation" />`;
     if (ship.size > DESTROYED + 1) showHit();
     clickedCell.classList.add('hit');
     battleship.board[x][y].size -= 1;
     if (battleship.board[x][y].size === 0) {
       ship.cells.forEach(cell => {
         const destroyedCell = document.querySelector(`[data-number="${cell}"]`);
-        destroyedCell.innerHTML =
-          '<img src="./sinking.d9fee310.gif" class="animation" loop="false"/>';
+        destroyedCell.innerHTML = `<img src="${sinking}" class="animation"/>`;
         destroyedCell.classList.add('destroyed');
       });
       console.log(ship.cells.length);
