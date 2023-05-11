@@ -9,7 +9,7 @@ const createInnerHTML = (size, type) => {
   return innerHTML;
 };
 
-createFigure = (size, amount, type) => {
+const createFigure = (size, amount, type) => {
   const elements = [];
   for (let i = 0; i < amount; i++) {
     const figure = document.createElement('figure');
