@@ -35,7 +35,33 @@ wrapperEl.addEventListener('click', event => {
 });
 
 postBtn.addEventListener('click', () => {
-  fetch('http://localhost:1234/highScore.json')
-    .then(res => res.json())
-    .then(console.log);
+  const data = {
+    userName: 'John',
+    highScore: 2000,
+  };
+  fetch(
+    'https://raw.githubusercontent.com/KrzysztofRozbicki/Battleship-pureJS/main/src/highScore.json',
+    {
+      method: 'PATCH',
+      headers: {
+        'Content-Type': 'application/json',
+      },
+      body: JSON.stringify(data),
+    }
+  )
+    .then(response => {
+      if (!response.ok) {
+        throw new Error('Failed to submit score');
+      }
+      console.log('Score submitted!');
+    })
+    .catch(error => {
+      console.error(error);
+    });
+
+  // fetch(
+  //   'https://raw.githubusercontent.com/KrzysztofRozbicki/Battleship-pureJS/main/src/highScore.json'
+  // )
+  //   .then(res => res.json())
+  //   .then(console.log);
 });
