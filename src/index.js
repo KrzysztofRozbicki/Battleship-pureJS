@@ -1,9 +1,11 @@
 import { Battleship } from './battleship';
+import highScore from './highScore.json';
 
 const SIZE = 10;
 const wrapperEl = document.getElementById('app');
 const startBtn = document.getElementById('start-btn');
 const pointsEl = document.getElementById('points');
+const postBtn = document.getElementById('post-btn');
 
 const DESTROYED = 0;
 const MISS = 6;
@@ -25,10 +27,15 @@ wrapperEl.addEventListener('click', event => {
 
   if (ship.size > DESTROYED && ship.size < MISS) {
     battleship.shipHit(clickedCell, x, y);
-    ///// WSZYSTKO PONIŻEJ TRZEBA PRZENIEŚĆ DO KLASY
   }
   if (ship === EMPTY) {
     battleship.shipMiss(clickedCell, x, y);
   }
   battleship.updatePoints(pointsEl);
+});
+
+postBtn.addEventListener('click', () => {
+  fetch('http://localhost:1234/highScore.json')
+    .then(res => res.json())
+    .then(console.log);
 });
