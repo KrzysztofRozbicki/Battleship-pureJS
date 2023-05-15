@@ -24,6 +24,5 @@ export const drawShip = (size, quantity, sinked) => {
   const elements = [];
   elements.push(...createFigure(size, quantity, burning));
   elements.push(...createFigure(size, sinked, sinking));
-  console.log(elements);
   return elements;
 };

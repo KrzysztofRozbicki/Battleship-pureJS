@@ -1,11 +1,9 @@
 import { Battleship } from './battleship';
-import highScore from './highScore.json';
 
 const SIZE = 10;
 const wrapperEl = document.getElementById('app');
 const startBtn = document.getElementById('start-btn');
 const pointsEl = document.getElementById('points');
-const postBtn = document.getElementById('post-btn');
 
 const DESTROYED = 0;
 const MISS = 6;
@@ -32,36 +30,4 @@ wrapperEl.addEventListener('click', event => {
     battleship.shipMiss(clickedCell, x, y);
   }
   battleship.updatePoints(pointsEl);
-});
-
-postBtn.addEventListener('click', () => {
-  const data = {
-    userName: 'John',
-    highScore: 2000,
-  };
-  fetch(
-    'https://raw.githubusercontent.com/KrzysztofRozbicki/Battleship-pureJS/main/src/highScore.json',
-    {
-      method: 'PATCH',
-      headers: {
-        'Content-Type': 'application/json',
-      },
-      body: JSON.stringify(data),
-    }
-  )
-    .then(response => {
-      if (!response.ok) {
-        throw new Error('Failed to submit score');
-      }
-      console.log('Score submitted!');
-    })
-    .catch(error => {
-      console.error(error);
-    });
-
-  // fetch(
-  //   'https://raw.githubusercontent.com/KrzysztofRozbicki/Battleship-pureJS/main/src/highScore.json'
-  // )
-  //   .then(res => res.json())
-  //   .then(console.log);
 });

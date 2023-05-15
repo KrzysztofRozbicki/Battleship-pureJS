@@ -27,6 +27,11 @@
   cursor: none;
 }
 
+.win {
+  pointer-events: none;
+  cursor: none;
+}
+
 .destroyed {
   background-color: red;
 }

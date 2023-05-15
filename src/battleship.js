@@ -7,6 +7,8 @@ const cruiserEl = document.getElementById('cruiser-left');
 const destroyerEl = document.getElementById('destroyer-left');
 const fregateEl = document.getElementById('fregate-left');
 const corvetteEl = document.getElementById('corvette-left');
+const wrapperEl = document.getElementById('app');
+const pointsEl = document.getElementById('points');
 
 export class Battleship {
   #size;
@@ -136,6 +138,11 @@ export class Battleship {
         this.#corvette.quantity === 0
       ) {
         youWin(this.#points);
+        wrapperEl.classList.toggle('win');
+        setTimeout(() => {
+          this.resetBoard(wrapperEl, pointsEl);
+          wrapperEl.classList.toggle('win');
+        }, 3000);
       }
     }
   }
